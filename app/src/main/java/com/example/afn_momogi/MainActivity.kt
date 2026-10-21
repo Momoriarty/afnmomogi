@@ -2,54 +2,56 @@ package com.example.afn_momogi
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.example.afn_momogi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Setup Logout (Profile Icon) menggunakan SharedPreferences
-        val btnProfile = findViewById<android.widget.ImageView>(R.id.btnProfile)
-        btnProfile.setOnClickListener {
-            // Hapus status login
-            val sharedPref = getSharedPreferences("GmsPrefs", android.content.Context.MODE_PRIVATE)
-            with(sharedPref.edit()) {
-                clear()
-                apply()
+        // 1. Tampilkan HomeFragment secara default saat aplikasi dibuka
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
+        }
+
+        // 2. Pasang Listener saat tab Bottom Navigation diklik
+        binding.bottomNavView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_beranda -> {
+                    replaceFragment(HomeFragment())
+                    true
+                }
+
+                R.id.nav_jadwal -> {
+                    replaceFragment(JadwalFragment())
+                    true
+                }
+
+                R.id.nav_pembayaran -> {
+                    replaceFragment(PembayaranFragment())
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    replaceFragment(ProfileFragment())
+                    true
+                }
+
+                else -> false
             }
-            
-            // Kembali ke halaman Login
-            val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
         }
+    }
 
-        // Setup Button ke Halaman Web
-        val btnOpenWeb = findViewById<Button>(R.id.btnOpenWeb)
-        btnOpenWeb.setOnClickListener {
-            val intent = Intent(this, WebActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Setup Button ke Halaman Detail (Quick Actions)
-        val btnOpenDetail = findViewById<android.view.View>(R.id.btnOpenDetail)
-        btnOpenDetail.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Setup Tab Jadwal di Bottom Navigation
-        val tabJadwal = findViewById<android.view.View>(R.id.tabJadwal)
-        tabJadwal.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            startActivity(intent)
-        }
+    // Fungsi sakti untuk menukar Fragment di dalam container
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .commit()
     }
 }

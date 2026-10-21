@@ -69,11 +69,12 @@
                 android:layout_marginTop="24dp"
                 android:textColor="#17181B"/>
             <EditText
+                android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/rounded_border"
                 android:paddingHorizontal="16dp"
-                android:hint="andi@email.com"
+                android:hint="arifin@email.com"
                 android:layout_marginTop="8dp"
                 android:drawableStart="@android:drawable/ic_dialog_email"
                 android:drawablePadding="12dp"/>
@@ -87,6 +88,7 @@
                 android:layout_marginTop="16dp"
                 android:textColor="#17181B"/>
             <EditText
+                android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/rounded_border"

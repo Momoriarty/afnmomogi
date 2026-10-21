@@ -25,7 +25,7 @@ class WebActivity : AppCompatActivity() {
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true // Bantu support website modern
         // Coba ganti ke pencarian Google buat ngetes
-        webView.loadUrl("https://www.google.com/search?q=jadwal+futsal+asean+cup")
+        webView.loadUrl("https://www.fifa.com/id/tournaments/mens/asean-cup/2026/standings")
     }
 
     // Fungsi biar tombol back di toolbar jalan
