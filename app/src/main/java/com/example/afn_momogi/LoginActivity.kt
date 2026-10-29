@@ -24,14 +24,24 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            // Ambil teks langsung lewat binding
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
+            // Ambil input dari user
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
 
-            // Validasi: Username harus sama dengan Password dan tidak boleh kosong
-            if (username == password && username.isNotEmpty()) {
+            // Ambil data yang tersimpan di SharedPreferences
+            val sharedPref = getSharedPreferences("GmsPrefs", Context.MODE_PRIVATE)
+            val savedUsername = sharedPref.getString("username", "") ?: ""
+            val savedPassword = sharedPref.getString("password", "") ?: ""
+
+            // Rule 1: jika username = password
+            val isRule1 = username.isNotEmpty() && username == password
+
+            // Rule 2: jika username dan password sesuai dengan yang tersimpan di SharedPreferences
+            val isRule2 = username.isNotEmpty() && username == savedUsername && password == savedPassword
+
+            // Cek apakah memenuhi Rule 1 ATAU Rule 2
+            if (isRule1 || isRule2) {
                 // 1. Simpan status sesi ke SharedPreferences
-                val sharedPref = getSharedPreferences("GmsPrefs", Context.MODE_PRIVATE)
                 with(sharedPref.edit()) {
                     putBoolean("isLoggedIn", true)
                     putString("username", username)
@@ -52,6 +62,13 @@ class LoginActivity : AppCompatActivity() {
                     }
                     .show()
             }
+        }
+
+        binding.btnDaftar.setOnClickListener {
+            // Berpindah ke RegisterActivity
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
