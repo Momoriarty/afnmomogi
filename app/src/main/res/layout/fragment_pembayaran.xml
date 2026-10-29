@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kelola pembayaran booking lapangan dan event futsal"
+                android:text="Kelola registrasi tim turnamen dan biaya arena futsal"
                 android:textSize="12sp"
                 android:textColor="#72767F"
                 android:layout_marginTop="2dp" />
@@ -154,7 +154,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="Sewa Lapangan Sintetis"
+                            android:text="Slot Tim: Pekanbaru Futsal Series"
                             android:textColor="#17181B"
                             android:textStyle="bold"
                             android:textSize="14sp" />
@@ -253,7 +253,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="Booking Lapangan Vinyl"
+                            android:text="Sewa Venue Pertandingan Semi-Final"
                             android:textColor="#17181B"
                             android:textStyle="bold"
                             android:textSize="14sp" />

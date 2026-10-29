@@ -30,7 +30,7 @@ class PembayaranFragment : Fragment() {
         binding.btnBayarSekarang.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Pembayaran Tagihan")
-                .setMessage("Bayar Sewa Lapangan Sintetis sebesar Rp 120.000 via QRIS?")
+                .setMessage("Bayar Slot Tim: Pekanbaru Futsal Series sebesar Rp 120.000 via QRIS?")
                 .setPositiveButton("Bayar") { _, _ ->
                     Toast.makeText(requireContext(), "Pembayaran Berhasil Diverifikasi!", Toast.LENGTH_SHORT).show()
                 }
@@ -42,7 +42,7 @@ class PembayaranFragment : Fragment() {
         binding.btnBukti1.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Resi Transaksi #INV-002")
-                .setMessage("Item: Sewa Lapangan Vinyl\nNominal: Rp 150.000\nStatus: Lunas (QRIS/GoPay)\nTanggal: 18 Okt 2026")
+                .setMessage("Item: Sewa Venue Pertandingan Semi-Final\nNominal: Rp 150.000\nStatus: Lunas (QRIS/GoPay)\nTanggal: 18 Okt 2026")
                 .setPositiveButton("Tutup", null)
                 .show()
         }
