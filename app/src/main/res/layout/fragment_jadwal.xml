@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -23,6 +23,7 @@
                 android:orientation="horizontal"
                 android:background="@drawable/rounded_border"
                 android:padding="4dp">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -30,7 +31,8 @@
                     android:text="Hari Ini"
                     android:gravity="center"
                     android:textColor="#72767F"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -39,7 +41,8 @@
                     android:gravity="center"
                     android:background="@drawable/red_tab_bg"
                     android:textColor="#FFFFFF"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -47,7 +50,7 @@
                     android:text="Selesai"
                     android:gravity="center"
                     android:textColor="#72767F"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -56,18 +59,20 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="Oktober 2026"
-                    android:textColor="#17181B"/>
+                    android:textColor="#17181B" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3 pertandingan"
                     android:textSize="12sp"
-                    android:textColor="#72767F"/>
+                    android:textColor="#72767F" />
             </LinearLayout>
 
             <!-- Card 1 -->
@@ -77,22 +82,81 @@
                 android:layout_marginTop="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:background="@drawable/rounded_border"
                     android:padding="16dp">
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Melayu Champions League" android:textColor="#17181B" android:textStyle="bold"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tersedia" android:background="@drawable/green_chip_bg" android:textColor="#16865A" android:paddingHorizontal="8dp" android:paddingVertical="4dp" android:textSize="10sp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Melayu Champions League"
+                            android:textColor="#17181B"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tersedia"
+                            android:background="@drawable/green_chip_bg"
+                            android:textColor="#16865A"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="4dp"
+                            android:textSize="10sp" />
                     </LinearLayout>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2 Okt 2026 • 19.00 WIB" android:textSize="12sp" android:layout_marginTop="8dp"/>
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp">
-                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Riau Sport Center" android:textSize="12sp"/>
-                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="end">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4 slot" android:textSize="10sp"/>
-                            <Button android:layout_width="wrap_content" android:layout_height="32dp" android:text="Daftar" android:textSize="10sp" android:backgroundTint="#C62828" android:textColor="#FFFFFF" app:cornerRadius="6dp" android:insetTop="0dp" android:insetBottom="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 Okt 2026 • 19.00 WIB"
+                        android:textSize="12sp"
+                        android:layout_marginTop="8dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Riau Sport Center"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4 slot"
+                                android:textSize="10sp" />
+
+                            <Button
+                                android:id="@+id/btnDaftar1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="Daftar"
+                                android:textSize="10sp"
+                                android:backgroundTint="#C62828"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="6dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -105,22 +169,81 @@
                 android:layout_marginTop="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:background="@drawable/rounded_border"
                     android:padding="16dp">
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Pekanbaru Futsal Series" android:textColor="#17181B" android:textStyle="bold"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tersedia" android:background="@drawable/green_chip_bg" android:textColor="#16865A" android:paddingHorizontal="8dp" android:paddingVertical="4dp" android:textSize="10sp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Pekanbaru Futsal Series"
+                            android:textColor="#17181B"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tersedia"
+                            android:background="@drawable/green_chip_bg"
+                            android:textColor="#16865A"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="4dp"
+                            android:textSize="10sp" />
                     </LinearLayout>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4 Okt 2026 • 20.30 WIB" android:textSize="12sp" android:layout_marginTop="8dp"/>
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp">
-                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Vamos Arena" android:textSize="12sp"/>
-                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="end">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2 slot" android:textSize="10sp"/>
-                            <Button android:layout_width="wrap_content" android:layout_height="32dp" android:text="Daftar" android:textSize="10sp" android:backgroundTint="#C62828" android:textColor="#FFFFFF" app:cornerRadius="6dp" android:insetTop="0dp" android:insetBottom="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 Okt 2026 • 20.30 WIB"
+                        android:textSize="12sp"
+                        android:layout_marginTop="8dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Vamos Arena"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2 slot"
+                                android:textSize="10sp" />
+
+                            <Button
+                                android:id="@+id/btnDaftar2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="Daftar"
+                                android:textSize="10sp"
+                                android:backgroundTint="#C62828"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="6dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -133,22 +256,80 @@
                 android:layout_marginTop="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:background="@drawable/rounded_border"
                     android:padding="16dp">
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Garuda Community Cup" android:textColor="#17181B" android:textStyle="bold"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Penuh" android:background="@drawable/red_chip_bg" android:textColor="#C62828" android:paddingHorizontal="8dp" android:paddingVertical="4dp" android:textSize="10sp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Garuda Community Cup"
+                            android:textColor="#17181B"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Penuh"
+                            android:background="@drawable/red_chip_bg"
+                            android:textColor="#C62828"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="4dp"
+                            android:textSize="10sp" />
                     </LinearLayout>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8 Okt 2026 • 18.45 WIB" android:textSize="12sp" android:layout_marginTop="8dp"/>
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp">
-                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Gelanggang Remaja" android:textSize="12sp"/>
-                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="end">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 slot" android:textSize="10sp"/>
-                            <Button android:layout_width="wrap_content" android:layout_height="32dp" android:text="Daftar" android:textSize="10sp" android:backgroundTint="#E4E6EA" android:textColor="#72767F" app:cornerRadius="6dp" android:insetTop="0dp" android:insetBottom="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 Okt 2026 • 18.45 WIB"
+                        android:textSize="12sp"
+                        android:layout_marginTop="8dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Gelanggang Remaja"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 slot"
+                                android:textSize="10sp" />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="Daftar"
+                                android:textSize="10sp"
+                                android:backgroundTint="#E4E6EA"
+                                android:textColor="#72767F"
+                                app:cornerRadius="6dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

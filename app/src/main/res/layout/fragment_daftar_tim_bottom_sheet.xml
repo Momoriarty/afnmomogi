@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="#D1D5DB"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pendaftaran Tim Turnamen"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#17181B"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Isi data tim untuk mengunci slot kompetisi"
+        android:textSize="12sp"
+        android:textColor="#72767F"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Tim Futsal"
+        android:textSize="12sp"
+        android:textColor="#72767F"/>
+    <EditText
+        android:id="@+id/etNamaTim"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_border"
+        android:hint="Contoh: Garuda Muda FC"
+        android:paddingHorizontal="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Kapten / Official"
+        android:textSize="12sp"
+        android:textColor="#72767F"/>
+    <EditText
+        android:id="@+id/etNamaKapten"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_border"
+        android:hint="Nama lengkap penanggung jawab"
+        android:paddingHorizontal="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nomor WhatsApp"
+        android:textSize="12sp"
+        android:textColor="#72767F"/>
+    <EditText
+        android:id="@+id/etNoWa"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_border"
+        android:hint="08xxxxxxxxxx"
+        android:inputType="phone"
+        android:paddingHorizontal="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnSubmitPendaftaran"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Kirim Pendaftaran"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#C62828"
+        app:cornerRadius="8dp"/>
+
+</LinearLayout>
