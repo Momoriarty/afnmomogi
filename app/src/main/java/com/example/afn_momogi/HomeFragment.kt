@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SimpleAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.afn_momogi.databinding.FragmentHomeBinding
@@ -26,24 +28,57 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Klik Foto Profil -> Buka Tab Profile
+        // 1. Profil & Web
         binding.btnProfile.setOnClickListener {
             (requireActivity() as MainActivity).findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav_view).selectedItemId = R.id.nav_profile
         }
 
-        // 2. Klik Tombol Web -> Buka WebActivity
         binding.btnOpenWeb.setOnClickListener {
-            val intent = Intent(requireContext(), WebActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(requireContext(), WebActivity::class.java))
         }
 
-        // 3. Klik Quick Action Detail -> Pindah ke Tab Jadwal
-        binding.btnOpenDetail.setOnClickListener {
+        // 2. Event Klik Tombol GridLayout
+        binding.btnGridJadwal.setOnClickListener {
             (requireActivity() as MainActivity).findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_nav_view).selectedItemId = R.id.nav_jadwal
         }
+        binding.btnGridTanding.setOnClickListener {
+            Toast.makeText(requireContext(), "Mencari lawan tanding...", Toast.LENGTH_SHORT).show()
+        }
+        binding.btnGridTim.setOnClickListener {
+            Toast.makeText(requireContext(), "Membuka daftar tim turnamen", Toast.LENGTH_SHORT).show()
+        }
+        binding.btnGridAturan.setOnClickListener {
+            Toast.makeText(requireContext(), "Aturan: Wajib jersey bernomor punggung", Toast.LENGTH_SHORT).show()
+        }
 
-        // 4. Inisialisasi RecyclerView Klasemen (FITUR BARU)
+        // 3. Pasang 1 ListView dengan SimpleAdapter
+        setupPengumumanListView()
+
+        // 4. Pasang 1 RecyclerView Klasemen
         setupKlasemenRecyclerView()
+    }
+
+    private fun setupPengumumanListView() {
+        val pengumumanData = listOf(
+            mapOf("title" to "Registrasi Liga Futsal 2026 Dibuka", "desc" to "Pendaftaran tim dibuka hingga 25 November 2026."),
+            mapOf("title" to "Perubahan Venue Matchday 6", "desc" to "Pertandingan semifinal dialihkan ke Riau Sport Center."),
+            mapOf("title" to "Aturan Akumulasi Kartu", "desc" to "2 kartu kuning otomatis dilarang bermain 1 laga.")
+        )
+
+        val adapter = SimpleAdapter(
+            requireContext(),
+            pengumumanData,
+            android.R.layout.simple_list_item_2,
+            arrayOf("title", "desc"),
+            intArrayOf(android.R.id.text1, android.R.id.text2)
+        )
+
+        binding.lvPengumuman.adapter = adapter
+
+        binding.lvPengumuman.setOnItemClickListener { _, _, position, _ ->
+            val item = pengumumanData[position]
+            Toast.makeText(requireContext(), "Info: ${item["title"]}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setupKlasemenRecyclerView() {

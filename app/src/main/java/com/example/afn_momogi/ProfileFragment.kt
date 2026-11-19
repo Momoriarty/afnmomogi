@@ -50,6 +50,11 @@ class ProfileFragment : Fragment() {
                 }
                 .show()
         }
+
+        // Buka Halaman Onboarding / Panduan
+        binding.btnOnboarding.setOnClickListener {
+            startActivity(Intent(requireContext(), OnboardingActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {

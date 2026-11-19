@@ -14,29 +14,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:gravity="center_horizontal">
+            android:padding="20dp">
 
             <!-- Judul Halaman -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROFIL DEVELOPER"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#17181B"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="24dp"
+                android:text="PROFIL DEVELOPER"
+                android:textColor="#17181B"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <!-- Kartu Biodata Putih -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBiodata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -48,83 +48,103 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="NAMA DEVELOPER"
-                        android:textSize="11sp"
                         android:textColor="#72767F"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:text="Arifin"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
                         android:textColor="#17181B"
-                        android:layout_marginBottom="16dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="PROGRAM STUDI &amp; KAMPUS"
-                        android:textSize="11sp"
                         android:textColor="#72767F"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:text="Teknik Informatika - Politeknik Caltex Riau"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
                         android:textColor="#17181B"
-                        android:layout_marginBottom="16dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="MEDIA SOSIAL"
-                        android:textSize="11sp"
                         android:textColor="#72767F"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:text="@arifin / github.com/arifin"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
                         android:textColor="#17181B"
-                        android:layout_marginBottom="16dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="HOBI"
-                        android:textSize="11sp"
                         android:textColor="#72767F"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:text="Futsal &amp; Eksplorasi Mobile App"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
                         android:textColor="#17181B"
-                        android:layout_marginBottom="16dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="KEKUATAN TERBESAR"
-                        android:textSize="11sp"
                         android:textColor="#72767F"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Problem Solver &amp; Cepat Belajar Hal Baru"
+                        android:textColor="#C62828"
                         android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#C62828" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tombol Panduan Aplikasi (Onboarding) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOnboarding"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Panduan Aplikasi (Onboarding)"
+                android:textColor="#C62828"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_help"
+                app:iconTint="#C62828"
+                app:strokeColor="#C62828"
+                app:strokeWidth="1.5dp" />
 
             <!-- Tombol Logout Merah -->
             <Button
@@ -133,8 +153,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:layout_marginBottom="32dp"
-                android:text="Logout"
-                android:backgroundTint="#C62828" />
+                android:backgroundTint="#C62828"
+                android:text="Logout" />
 
         </LinearLayout>
     </ScrollView>
