@@ -129,6 +129,23 @@
                 android:textColor="#17181B"
                 android:layout_marginTop="16dp" />
 
+            <!-- Tombol & RecyclerView CRUD Pembayaran Supabase -->
+            <Button
+                android:id="@+id/btnTambahTagihan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+ Tambah Tagihan"
+                android:backgroundTint="#C62828"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginTop="8dp" />
+
             <!-- Card 1: Tagihan Menunggu Pembayaran -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

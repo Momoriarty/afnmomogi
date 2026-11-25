@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.afn_momogi.MainActivity
-import com.example.afn_momogi.R
 import com.example.afn_momogi.databinding.FragmentDaftarTimBottomSheetBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.afn_momogi.network.SupabaseClient
+import com.example.afn_momogi.network.TimItem
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DaftarTimBottomSheet : BottomSheetDialogFragment() {
 
@@ -38,12 +40,27 @@ class DaftarTimBottomSheet : BottomSheetDialogFragment() {
                 return@setOnClickListener
             }
 
-            // Notifikasi Berhasil
-            Toast.makeText(requireContext(), "Pendaftaran $namaTim Berhasil! Mengalihkan ke pembayaran...", Toast.LENGTH_LONG).show()
-            dismiss() // Menutup form meluncur
+            val tim = TimItem(
+                nama_tim = namaTim,
+                nama_kapten = kapten,
+                no_wa = wa
+            )
 
-            // Otomatis pindahkan layar ke Tab Pembayaran
-            (requireActivity() as? MainActivity)?.findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.selectedItemId = R.id.nav_pembayaran
+            SupabaseClient.api.createTim(tim).enqueue(object : Callback<List<TimItem>> {
+                override fun onResponse(call: Call<List<TimItem>>, response: Response<List<TimItem>>) {
+                    if (response.isSuccessful) {
+                        Toast.makeText(requireContext(), "Tim $namaTim tersimpan!", Toast.LENGTH_SHORT).show()
+                        parentFragmentManager.setFragmentResult("refresh_tim", Bundle())
+                        dismiss()
+                    } else {
+                        Toast.makeText(requireContext(), "Gagal: ${response.code()}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<List<TimItem>>, t: Throwable) {
+                    Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 

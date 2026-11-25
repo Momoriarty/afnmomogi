@@ -52,26 +52,45 @@ class VerifikasiActivity : AppCompatActivity() {
 
         // 4. Tombol Submit: Melakukan validasi data di SharedPreferences
         binding.btnSubmit.setOnClickListener {
-            // Validasi 1: Semua inputan tidak boleh kosong
             if (nama.isEmpty() || email.isEmpty() || tanggalLahir.isEmpty() ||
                 jenisKelamin.isEmpty() || username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Data tidak boleh ada yang kosong!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
-            // Validasi 2: Password dan Confirm Password harus sama
             if (password != confirmPassword) {
                 Toast.makeText(this, "Password dan Confirm Password tidak cocok!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Jika lolos validasi: Tampilkan Toast Registrasi Berhasil & Navigasi
-            Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_LONG).show()
+            val user = com.example.afn_momogi.network.UserRequest(
+                nama = nama,
+                email = email,
+                tanggal_lahir = tanggalLahir,
+                jenis_kelamin = jenisKelamin,
+                username = username,
+                password = password
+            )
 
-            // Pindah ke halaman utama (ganti MainActivity dengan activity tujuan Anda)
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finishAffinity()
+            com.example.afn_momogi.network.SupabaseClient.api.registerUser(user)
+                .enqueue(object : retrofit2.Callback<List<com.example.afn_momogi.network.UserRequest>> {
+                    override fun onResponse(
+                        call: retrofit2.Call<List<com.example.afn_momogi.network.UserRequest>>,
+                        response: retrofit2.Response<List<com.example.afn_momogi.network.UserRequest>>
+                    ) {
+                        if (response.isSuccessful) {
+                            sharedPref.edit().putBoolean("isLoggedIn", true).apply()
+                            Toast.makeText(this@VerifikasiActivity, "Registrasi Berhasil ke Supabase!", Toast.LENGTH_LONG).show()
+                            startActivity(Intent(this@VerifikasiActivity, MainActivity::class.java))
+                            finishAffinity()
+                        } else {
+                            Toast.makeText(this@VerifikasiActivity, "Gagal: ${response.code()}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: retrofit2.Call<List<com.example.afn_momogi.network.UserRequest>>, t: Throwable) {
+                        Toast.makeText(this@VerifikasiActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
         }
     }
 }
